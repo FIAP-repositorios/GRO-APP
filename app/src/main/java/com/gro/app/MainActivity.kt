@@ -3,36 +3,43 @@ package com.gro.app
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.gro.app.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
+    private lateinit var recyclerView : RecyclerView
+    private lateinit var homeItems : ArrayList<HomeItems>
+    private lateinit var homeItemsAdapter: HomeItemsAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(R.layout.fragment_home)
 
-        setContentView(binding.root)
-        replaceFragment(Home())
-
-        binding.bottomNavigationView.setOnItemSelectedListener {
-            when (it.itemId) {
-                R.id.home -> replaceFragment(Home())
-                R.id.profile -> replaceFragment(Profile())
-                R.id.setting -> replaceFragment(Setting())
-                else -> {}
-            }
-            true
-        }
+        init()
     }
 
-    private fun replaceFragment(fragment: Fragment) {
-        val fragmentManager = supportFragmentManager
-        val fragmentTransaction = fragmentManager.beginTransaction()
+    private fun init() {
+        recyclerView = findViewById(R.id.recycleView)
 
-        fragmentTransaction.replace(R.id.frame_layout, fragment)
-        fragmentTransaction.commit()
+        recyclerView.setHasFixedSize(true)
+        recyclerView.layoutManager = GridLayoutManager(this, 2)
+
+        homeItems = ArrayList()
+
+        addHomeItemToList()
+
+        homeItemsAdapter = HomeItemsAdapter(homeItems)
+        recyclerView.adapter = homeItemsAdapter
+    }
+
+    private fun addHomeItemToList() {
+        homeItems.add(HomeItems(R.drawable.baseline_home_24, "Test 1"))
+        homeItems.add(HomeItems(R.drawable.baseline_home_24, "Test 2"))
+        homeItems.add(HomeItems(R.drawable.baseline_home_24, "Test 3"))
+        homeItems.add(HomeItems(R.drawable.baseline_home_24, "Test 4"))
     }
 }
