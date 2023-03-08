@@ -37,9 +37,12 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun addHomeItemToList() {
-        homeItems.add(HomeItems(R.drawable.baseline_home_24, "Test 1"))
-        homeItems.add(HomeItems(R.drawable.baseline_home_24, "Test 2"))
-        homeItems.add(HomeItems(R.drawable.baseline_home_24, "Test 3"))
-        homeItems.add(HomeItems(R.drawable.baseline_home_24, "Test 4"))
+        homeItems.add(HomeItems(R.drawable.laticionios, "Laticínios"))
+        homeItems.add(HomeItems(R.drawable.fruits, "Frutas"))
+        homeItems.add(HomeItems(R.drawable.vegetal, "Vegetais"))
+        homeItems.add(HomeItems(R.drawable.beef, "Carnes"))
+        homeItems.add(HomeItems(R.drawable.fish, "Peixes"))
+        homeItems.add(HomeItems(R.drawable.ocean, "Frutos do mar"))
+
     }
 }
