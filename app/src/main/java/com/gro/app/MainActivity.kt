@@ -1,5 +1,6 @@
 package com.gro.app
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -32,7 +33,7 @@ class MainActivity : AppCompatActivity() {
 
         addHomeItemToList()
 
-        homeItemsAdapter = HomeItemsAdapter(homeItems)
+        homeItemsAdapter = HomeItemsAdapter(homeItems, applicationContext)
         recyclerView.adapter = homeItemsAdapter
     }
 
@@ -43,6 +44,5 @@ class MainActivity : AppCompatActivity() {
         homeItems.add(HomeItems(R.drawable.beef, "Carnes"))
         homeItems.add(HomeItems(R.drawable.fish, "Peixes"))
         homeItems.add(HomeItems(R.drawable.ocean, "Frutos do mar"))
-
     }
 }
