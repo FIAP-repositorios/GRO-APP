@@ -26,11 +26,11 @@ class ProductItemsAdapter(private val items: ArrayList<HomeItems>, private val c
         holder.textView.text = item.name
 
         holder.button.setOnClickListener {
-//            val intent = Intent(context, Products::class.java)
-//
-//            intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK;
-//
-//            context.startActivity(intent)
+            val intent = Intent(context, Cart::class.java)
+
+            intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK;
+
+            context.startActivity(intent)
         }
     }
 }
