@@ -10,7 +10,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
-class HomeItemsAdapter(private val items: ArrayList<HomeItems>, private val context : Context)
+open class HomeItemsAdapter(private val items: ArrayList<HomeItems>, private val context : Context)
     : RecyclerView.Adapter<HomeItemsAdapter.HomeItemsViewHolder>() {
     class HomeItemsViewHolder(itemView: View) :
         RecyclerView.ViewHolder(itemView) {
