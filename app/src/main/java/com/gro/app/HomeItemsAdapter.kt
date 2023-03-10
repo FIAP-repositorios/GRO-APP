@@ -3,8 +3,8 @@ package com.gro.app
 import android.content.Context
 import android.content.Intent
 
-class ProductItemsAdapter(private val items: ArrayList<Items>, private val context : Context)
-    : GridItemsAdapter(items, R.layout.product_grid_item) {
+class HomeItemsAdapter(private val items: ArrayList<Items>, private val context : Context)
+    : GridItemsAdapter(items, R.layout.home_grid_items) {
     override fun onBindViewHolder(holder: HomeItemsViewHolder, position: Int) {
         val item = items[position]
 
@@ -12,7 +12,7 @@ class ProductItemsAdapter(private val items: ArrayList<Items>, private val conte
         holder.textView.text = item.name
 
         holder.button.setOnClickListener {
-            val intent = Intent(context, Cart::class.java)
+            val intent = Intent(context, Products::class.java)
 
             intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK;
 

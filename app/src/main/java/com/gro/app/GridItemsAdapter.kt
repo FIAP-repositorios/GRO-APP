@@ -1,7 +1,5 @@
 package com.gro.app
 
-import android.content.Context
-import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -10,8 +8,10 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
-open class GridItemsAdapter(private val items: ArrayList<HomeItems>, private val context : Context)
-    : RecyclerView.Adapter<GridItemsAdapter.HomeItemsViewHolder>() {
+open class GridItemsAdapter(
+    private val items: ArrayList<Items>,
+    private val viewID : Int
+    ) : RecyclerView.Adapter<GridItemsAdapter.HomeItemsViewHolder>() {
     class HomeItemsViewHolder(itemView: View) :
         RecyclerView.ViewHolder(itemView) {
             val imageView : ImageView = itemView.findViewById(R.id.productImage)
@@ -21,27 +21,12 @@ open class GridItemsAdapter(private val items: ArrayList<HomeItems>, private val
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HomeItemsViewHolder {
         val view = LayoutInflater.from(parent.context)
-            .inflate(R.layout.home_grid_items, parent, false)
+            .inflate(viewID, parent, false)
 
         return HomeItemsViewHolder(view)
     }
 
-    override fun getItemCount(): Int {
-        return items.size
-    }
+    override fun getItemCount() = items.size
 
-    override fun onBindViewHolder(holder: HomeItemsViewHolder, position: Int) {
-        val item = items[position]
-
-        holder.imageView.setImageResource(item.image)
-        holder.textView.text = item.name
-
-        holder.button.setOnClickListener {
-            val intent = Intent(context, Products::class.java)
-
-            intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK;
-
-            context.startActivity(intent)
-        }
-    }
+    override fun onBindViewHolder(holder: HomeItemsViewHolder, position: Int) {}
 }

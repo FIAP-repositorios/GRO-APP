@@ -7,8 +7,8 @@ import androidx.recyclerview.widget.RecyclerView
 
 class Products : AppCompatActivity() {
     private lateinit var recyclerView : RecyclerView
-    private lateinit var homeItems : ArrayList<HomeItems>
-    private lateinit var homeItemsAdapter: ProductItemsAdapter
+    private lateinit var items : ArrayList<Items>
+    private lateinit var productItemsAdapter: ProductItemsAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -23,16 +23,16 @@ class Products : AppCompatActivity() {
         recyclerView.setHasFixedSize(true)
         recyclerView.layoutManager = GridLayoutManager(this, 2)
 
-        homeItems = ArrayList()
+        items = ArrayList()
 
-        addHomeItemToList()
+        addItemToList()
 
-        homeItemsAdapter = ProductItemsAdapter(homeItems, applicationContext)
-        recyclerView.adapter = homeItemsAdapter
+        productItemsAdapter = ProductItemsAdapter(items, applicationContext)
+        recyclerView.adapter = productItemsAdapter
     }
 
-    private fun addHomeItemToList() {
-        homeItems.add(HomeItems(R.drawable.laticionios, "Maça - 200 reais"))
-        homeItems.add(HomeItems(R.drawable.fruits, "Banana - 100 reais"))
+    private fun addItemToList() {
+        items.add(Items(R.drawable.laticionios, "Maça - 200 reais"))
+        items.add(Items(R.drawable.fruits, "Banana - 100 reais"))
     }
 }
