@@ -4,14 +4,11 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.gro.app.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
-
-    private lateinit var binding: ActivityMainBinding
     private lateinit var recyclerView : RecyclerView
-    private lateinit var homeItems : ArrayList<HomeItems>
-    private lateinit var homeItemsAdapter: GridItemsAdapter
+    private lateinit var homeItems : ArrayList<Items>
+    private lateinit var homeItemsAdapter: HomeItemsAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,16 +28,16 @@ class MainActivity : AppCompatActivity() {
 
         addHomeItemToList()
 
-        homeItemsAdapter = GridItemsAdapter(homeItems, applicationContext)
+        homeItemsAdapter = HomeItemsAdapter(homeItems, applicationContext)
         recyclerView.adapter = homeItemsAdapter
     }
 
     private fun addHomeItemToList() {
-        homeItems.add(HomeItems(R.drawable.laticionios, "Laticínios"))
-        homeItems.add(HomeItems(R.drawable.fruits, "Frutas"))
-        homeItems.add(HomeItems(R.drawable.vegetal, "Vegetais"))
-        homeItems.add(HomeItems(R.drawable.beef, "Carnes"))
-        homeItems.add(HomeItems(R.drawable.fish, "Peixes"))
-        homeItems.add(HomeItems(R.drawable.ocean, "Frutos do mar"))
+        homeItems.add(Items(R.drawable.laticionios, "Laticínios"))
+        homeItems.add(Items(R.drawable.fruits, "Frutas"))
+        homeItems.add(Items(R.drawable.vegetal, "Vegetais"))
+        homeItems.add(Items(R.drawable.beef, "Carnes"))
+        homeItems.add(Items(R.drawable.fish, "Peixes"))
+        homeItems.add(Items(R.drawable.ocean, "Frutos do mar"))
     }
 }
