@@ -2,11 +2,11 @@ package com.gro.app.adapters
 
 import android.content.Context
 import android.content.Intent
-import com.gro.app.entities.Items
+import com.gro.app.entities.HomeItems
 import com.gro.app.activities.ProductsActivity
 import com.gro.app.R
 
-class HomeItemsAdapter(private val items: ArrayList<Items>, private val context : Context)
+class HomeItemsAdapter(private val items: ArrayList<HomeItems>, private val context : Context)
     : GridItemsAdapter(items, R.layout.home_grid_items) {
     override fun onBindViewHolder(holder: HomeItemsViewHolder, position: Int) {
         val item = items[position]

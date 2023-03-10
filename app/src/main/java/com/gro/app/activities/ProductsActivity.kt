@@ -4,13 +4,13 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.gro.app.entities.Items
+import com.gro.app.entities.HomeItems
 import com.gro.app.R
 import com.gro.app.adapters.ProductItemsAdapter
 
 class ProductsActivity : AppCompatActivity() {
     private lateinit var recyclerView : RecyclerView
-    private lateinit var items : ArrayList<Items>
+    private lateinit var items : ArrayList<HomeItems>
     private lateinit var productItemsAdapter: ProductItemsAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -35,7 +35,7 @@ class ProductsActivity : AppCompatActivity() {
     }
 
     private fun addItemToList() {
-        items.add(Items(R.drawable.laticionios, "Maça - 200 reais"))
-        items.add(Items(R.drawable.fruits, "Banana - 200 reais"))
+        items.add(HomeItems(R.drawable.laticionios, "Maça - 200 reais"))
+        items.add(HomeItems(R.drawable.fruits, "Banana - 200 reais"))
     }
 }
