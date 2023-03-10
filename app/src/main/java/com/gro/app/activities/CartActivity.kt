@@ -1,9 +1,10 @@
-package com.gro.app
+package com.gro.app.activities
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.gro.app.R
 
-class Cart : AppCompatActivity() {
+class CartActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_cart)
