@@ -1,4 +1,4 @@
-package com.gro.app
+package com.gro.app.adapters
 
 import android.view.LayoutInflater
 import android.view.View
@@ -7,6 +7,8 @@ import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.gro.app.entities.Items
+import com.gro.app.R
 
 open class GridItemsAdapter(
     private val items: ArrayList<Items>,

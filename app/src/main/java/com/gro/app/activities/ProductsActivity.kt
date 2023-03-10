@@ -1,11 +1,14 @@
-package com.gro.app
+package com.gro.app.activities
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.gro.app.entities.Items
+import com.gro.app.R
+import com.gro.app.adapters.ProductItemsAdapter
 
-class Products : AppCompatActivity() {
+class ProductsActivity : AppCompatActivity() {
     private lateinit var recyclerView : RecyclerView
     private lateinit var items : ArrayList<Items>
     private lateinit var productItemsAdapter: ProductItemsAdapter
