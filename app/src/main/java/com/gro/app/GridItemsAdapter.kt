@@ -10,8 +10,8 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
-open class HomeItemsAdapter(private val items: ArrayList<HomeItems>, private val context : Context)
-    : RecyclerView.Adapter<HomeItemsAdapter.HomeItemsViewHolder>() {
+open class GridItemsAdapter(private val items: ArrayList<HomeItems>, private val context : Context)
+    : RecyclerView.Adapter<GridItemsAdapter.HomeItemsViewHolder>() {
     class HomeItemsViewHolder(itemView: View) :
         RecyclerView.ViewHolder(itemView) {
             val imageView : ImageView = itemView.findViewById(R.id.productImage)
@@ -21,7 +21,7 @@ open class HomeItemsAdapter(private val items: ArrayList<HomeItems>, private val
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HomeItemsViewHolder {
         val view = LayoutInflater.from(parent.context)
-            .inflate(R.layout.each_item, parent, false)
+            .inflate(R.layout.home_grid_items, parent, false)
 
         return HomeItemsViewHolder(view)
     }
