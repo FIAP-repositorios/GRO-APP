@@ -36,6 +36,6 @@ class ProductsActivity : AppCompatActivity() {
 
     private fun addItemToList() {
         items.add(Items(R.drawable.laticionios, "Maça - 200 reais"))
-        items.add(Items(R.drawable.fruits, "Banana - 100 reais"))
+        items.add(Items(R.drawable.fruits, "Banana - 200 reais"))
     }
 }
