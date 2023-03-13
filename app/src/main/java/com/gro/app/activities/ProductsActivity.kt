@@ -2,20 +2,31 @@ package com.gro.app.activities
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.widget.Toolbar
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.gro.app.entities.HomeItems
 import com.gro.app.R
 import com.gro.app.adapters.ProductItemsAdapter
+import com.gro.app.utils.toolbarConfig
 
 class ProductsActivity : AppCompatActivity() {
     private lateinit var recyclerView : RecyclerView
     private lateinit var items : ArrayList<HomeItems>
     private lateinit var productItemsAdapter: ProductItemsAdapter
+    private lateinit var toolbar: Toolbar
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_products)
+
+        toolbar = findViewById(R.id.toolbar)
+
+        toolbarConfig(toolbar, "Produtos")
+
+        setSupportActionBar(toolbar)
+
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         init()
     }
