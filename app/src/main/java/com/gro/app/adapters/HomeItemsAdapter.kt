@@ -2,6 +2,7 @@ package com.gro.app.adapters
 
 import android.content.Context
 import android.content.Intent
+import android.os.Bundle
 import com.gro.app.entities.HomeItems
 import com.gro.app.activities.ProductsActivity
 import com.gro.app.R
@@ -17,7 +18,12 @@ class HomeItemsAdapter(private val items: ArrayList<HomeItems>, private val cont
         holder.button.setOnClickListener {
             val intent = Intent(context, ProductsActivity::class.java)
 
-            intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK;
+            val bundle = Bundle()
+
+            bundle.putString("title", item.name)
+
+            intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK
+            intent.putExtras(bundle)
 
             context.startActivity(intent)
         }

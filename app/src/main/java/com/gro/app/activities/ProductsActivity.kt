@@ -22,7 +22,9 @@ class ProductsActivity : AppCompatActivity() {
 
         toolbar = findViewById(R.id.toolbar)
 
-        toolbarConfig(toolbar, "Produtos")
+        val bundle = intent.extras
+
+        toolbarConfig(toolbar, bundle?.getString("title") ?: "Produtos")
 
         setSupportActionBar(toolbar)
 
