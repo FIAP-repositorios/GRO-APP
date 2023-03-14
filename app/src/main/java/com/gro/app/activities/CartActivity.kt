@@ -1,9 +1,7 @@
 package com.gro.app.activities
 
-import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
 import androidx.appcompat.widget.Toolbar
 import com.gro.app.R
 import com.gro.app.utils.toolbarConfig
@@ -21,5 +19,11 @@ class CartActivity : AppCompatActivity() {
         setSupportActionBar(toolbar)
 
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
+    }
+
+    override fun onSupportNavigateUp(): Boolean {
+        onBackPressed()
+
+        return true
     }
 }

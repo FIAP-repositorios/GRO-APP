@@ -7,12 +7,12 @@ import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.gro.app.entities.HomeItems
 import com.gro.app.R
+import com.gro.app.entities.Items
 
 open class GridItemsAdapter(
-    private val items: ArrayList<HomeItems>,
-    private val viewID : Int
+    private val items: ArrayList<Items>,
+    private val viewID: Int
     ) : RecyclerView.Adapter<GridItemsAdapter.HomeItemsViewHolder>() {
     class HomeItemsViewHolder(itemView: View) :
         RecyclerView.ViewHolder(itemView) {
