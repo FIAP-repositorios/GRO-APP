@@ -26,6 +26,8 @@ class ProductsActivity : AppCompatActivity() {
 
         val bundle = intent.extras
         val type = bundle?.getString("type")
+        val productsCartList = bundle?.getSerializable("productsCartList")
+            ?: arrayListOf<ProductItems>()
 
         toolbarConfig(toolbar, bundle?.getString("title") ?: "Produtos")
 
@@ -33,10 +35,16 @@ class ProductsActivity : AppCompatActivity() {
 
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
-        init(ProductEnum.valueOf("$type"))
+        init(
+            ProductEnum.valueOf("$type"),
+            productsCartList as ArrayList<ProductItems>
+        )
     }
 
-    private fun init(type : ProductEnum) {
+    private fun init(
+        type : ProductEnum,
+        productsCartList: ArrayList<ProductItems>
+    ) {
         recyclerView = findViewById(R.id.recycleViewProduct)
 
         recyclerView.setHasFixedSize(true)
@@ -44,7 +52,11 @@ class ProductsActivity : AppCompatActivity() {
 
         items = ArrayList()
 
-        productItemsAdapter = ProductItemsAdapter(findProducts(type) as ArrayList<Items>, applicationContext)
+        productItemsAdapter = ProductItemsAdapter(
+            findProducts(type) as ArrayList<Items>,
+            applicationContext,
+            productsCartList
+        )
         recyclerView.adapter = productItemsAdapter
     }
 

@@ -7,6 +7,7 @@ import com.gro.app.entities.HomeItems
 import com.gro.app.activities.ProductsActivity
 import com.gro.app.R
 import com.gro.app.entities.Items
+import com.gro.app.entities.ProductItems
 
 class HomeItemsAdapter(private val items: ArrayList<Items>, private val context : Context)
     : GridItemsAdapter(items, R.layout.home_grid_items) {
@@ -19,9 +20,11 @@ class HomeItemsAdapter(private val items: ArrayList<Items>, private val context 
         holder.button.setOnClickListener {
             val intent = Intent(context, ProductsActivity::class.java)
             val bundle = Bundle()
+            val productsCartList = ArrayList<ProductItems>()
 
             bundle.putString("title", item.name)
             bundle.putString("type", item.type.name)
+            bundle.putSerializable("productsCartList", productsCartList)
 
             intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK
             intent.putExtras(bundle)

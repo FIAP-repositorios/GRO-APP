@@ -6,10 +6,12 @@ import android.os.Bundle
 import com.gro.app.activities.CartActivity
 import com.gro.app.R
 import com.gro.app.entities.Items
+import com.gro.app.entities.ProductItems
 
 class ProductItemsAdapter(
         private val items: ArrayList<Items>,
-        private val context : Context
+        private val context : Context,
+        private val productsCartList: ArrayList<ProductItems>
     )
     : GridItemsAdapter(items, R.layout.product_grid_item) {
     override fun onBindViewHolder(holder: HomeItemsViewHolder, position: Int) {
@@ -22,7 +24,10 @@ class ProductItemsAdapter(
             val intent = Intent(context, CartActivity::class.java)
             val bundle = Bundle()
 
+            productsCartList.add(ProductItems(item.name, item.type, item.image))
+
             bundle.putString("title", item.name)
+            bundle.putSerializable("productsCartList", productsCartList)
 
             intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK
             intent.putExtras(bundle)

@@ -1,6 +1,7 @@
 package com.gro.app.entities
 
 import com.gro.app.enums.ProductEnum
+import java.io.Serializable
 
 interface Items {
     val image: Int
@@ -18,4 +19,4 @@ data class ProductItems(
     override val name : String,
     override val type : ProductEnum,
     override val image : Int
-) : Items
+) : Items, Serializable
