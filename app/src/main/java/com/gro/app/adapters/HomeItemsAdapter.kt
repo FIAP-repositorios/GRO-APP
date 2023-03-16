@@ -20,7 +20,10 @@ class HomeItemsAdapter(private val items: ArrayList<Items>, private val context 
         holder.button.setOnClickListener {
             val intent = Intent(context, ProductsActivity::class.java)
             val bundle = Bundle()
-            val productsCartList = ArrayList<ProductItems>()
+            val productsCartList = bundle.getSerializable("productsCartList")
+                ?: arrayListOf<ProductItems>()
+
+            println(productsCartList)
 
             bundle.putString("title", item.name)
             bundle.putString("type", item.type.name)

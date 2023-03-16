@@ -73,18 +73,46 @@ class ProductsActivity : AppCompatActivity() {
 
         // fruits
 
-        products.add(ProductItems("Maça", ProductEnum.FRUITS, R.drawable.fruits))
-        products.add(ProductItems("Banana", ProductEnum.FRUITS, R.drawable.fruits))
-        products.add(ProductItems("Abacaxi", ProductEnum.FRUITS, R.drawable.fruits))
-        products.add(ProductItems("Abacate", ProductEnum.FRUITS, R.drawable.fruits))
+        products.add(ProductItems("Maça - 200 reais", ProductEnum.FRUITS, R.drawable.maca))
+        products.add(ProductItems(
+            "Banana - 100 reais",
+            ProductEnum.FRUITS,
+            R.drawable.banana
+        ))
+        products.add(ProductItems(
+            "Abacaxi - 200 reais",
+            ProductEnum.FRUITS,
+            R.drawable.abacaxi
+        ))
+        products.add(ProductItems(
+            "Abacate - 300 reais",
+            ProductEnum.FRUITS,
+            R.drawable.abacate
+        ))
 
         // fish
-        products.add(ProductItems("Tilápia", ProductEnum.FISH, R.drawable.fish))
-        products.add(ProductItems("Salmão", ProductEnum.FISH, R.drawable.fish))
+        products.add(ProductItems(
+            "Tilápia - 50 reais",
+            ProductEnum.FISH,
+            R.drawable.fish_product
+        ))
+        products.add(ProductItems(
+            "Salmão - 300 reais",
+            ProductEnum.FISH,
+            R.drawable.fish_product
+        ))
 
         // vegetables
-        products.add(ProductItems("Alface", ProductEnum.VEGETABLE, R.drawable.vegetal))
-        products.add(ProductItems("Chuchu", ProductEnum.VEGETABLE, R.drawable.vegetal))
+        products.add(ProductItems(
+            "Alface - 10 reais",
+            ProductEnum.VEGETABLE,
+            R.drawable.alface
+        ))
+        products.add(ProductItems(
+            "Chuchu - 20 reais",
+            ProductEnum.VEGETABLE,
+            R.drawable.chuchu
+        ))
 
         return products
     }
